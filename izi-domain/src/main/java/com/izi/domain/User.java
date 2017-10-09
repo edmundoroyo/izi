@@ -2,8 +2,10 @@ package com.izi.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -16,10 +18,10 @@ public class User {
 	@Column(name="id")
 	Long id;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="user")
 	List<Duty> duties;
 	
-	@Column(name = "name")
+	@Column(name = "name", nullable = false)
 	String name;
 
 	public Long getId() {
