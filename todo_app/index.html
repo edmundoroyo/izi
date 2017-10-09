@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-framework="backbonejs">
+  <head>
+    <meta charset="UTF-8">
+    <title>To-Do app</title>
+    <link rel="stylesheet" href="node_modules/todomvc-common/base.css">
+    <link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+  </head>
+
+  <body>
+    <section class="todoapp">
+      <header class="header">
+        <h1>To-Do App</h1>
+        <input type="text" class="new-todo" placeholder="Que hay?" autofocus>        
+      </header>
+
+      <section class="main">
+        <input type="checkbox" class="toggle-all" id="toggle-all">
+        <label for="toggle-all"> Marcar todos como completado</label>
+        <ul class="todo-list"></ul>
+      </section>
+
+      <footer class="footer"></footer>
+    </section>
+    
+    <footer class="info">
+      <h2>Doble click para editar un to-do</h2>
+    </footer>
+
+    <script type="text/template" id="item-template">
+      <div class="view">
+        <input type="checkbox" class="toggle" <%= completed ? 'checked' : '' %>>
+        <label> <%- title %> </label>
+        <button class="destroy"></button>
+      </div>
+      <input class="edit" value="<%- title %>">
+    </script>
+
+    <script type="text/template" id="stats-template">
+      <span class="todo-count">
+        Quedan <strong><%= remaining %></strong>
+        <%= remaining === 1 ? 'item' : 'objetos' %> 
+      </span>
+
+      <ul class="filters">
+        <li>
+          <a href="#/" class="selected">Todos</a>
+        </li>
+        <li>
+          <a href="#/active">Activos</a>
+        </li>
+        <li>
+          <a href="#/completed">Completados</a>
+        </li>
+      </ul>
+
+      <% if (completed) { %>
+      <button class="clear-completed">Clear completed</button>
+      <% } %>
+    </script>
+
+    <script src="node_modules/todomvc-common/base.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/underscore/underscore.js"></script>
+    <script src="node_modules/backbone/backbone.js"></script>
+    <script src="node_modules/backbone.localstorage/build/backbone.localStorage.js"></script>
+
+    <script src="js/models/todo.js"></script>
+    <script src="js/collections/todos.js"></script>
+    <script src="js/views/todo-view.js"></script>
+    <script src="js/views/app-view.js"></script>
+    <script src="js/routers/router.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+
+</html>
