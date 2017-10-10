@@ -1,5 +1,6 @@
 /*global Backbone */
 var app = app || {};
+var userId = 1;
 
 (function() {
   'use strict';
@@ -12,6 +13,7 @@ var app = app || {};
     // Default attributes for the todo
     // and ensure that each todo created has `title` and `completed` keys.
     defaults: {
+      user: userId,
       title: '',
       completed: false
     },

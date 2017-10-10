@@ -1,5 +1,6 @@
 /*global Backbone, jQuery, _, ENTER_KEY */
 var app = app || {};
+var userId = 'http://localhost:8080/SpringBootCRUDApp/users/1';
 
 (function($) {
   'use strict';
@@ -101,6 +102,7 @@ var app = app || {};
     // Generate the attributes for a new Todo item.
     newAttributes: function() {
       return {
+        user: userId,
         title: this.$input.val().trim(),
         order: app.todos.nextOrder(),
         completed: false
@@ -112,6 +114,7 @@ var app = app || {};
     createOnEnter: function(e) {
       if (e.which === ENTER_KEY && this.$input.val().trim()) {
         app.todos.create(this.newAttributes());
+        console.log(app.todos.toJSON());
         this.$input.val('');
       }
     },
