@@ -18,7 +18,7 @@ public class User {
 	@Column(name="id")
 	Long id;
 	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="user")
+	@OneToMany(cascade=CascadeType.REMOVE, fetch=FetchType.EAGER, mappedBy="user")
 	List<Duty> duties;
 	
 	@Column(name = "name", nullable = false)
