@@ -20,12 +20,19 @@ var app = app || {};
       return this.urlRoot + 'duties';
     },
 
+
     // Filter down the list of all todo items that are finished.
     completed: function() {
       return this.where({
         completed: true
       });
     },
+	
+	parse: function(data){
+		
+		return data._embedded.duties;
+		
+	},
 
     // Filter down the list to only todo items that are still not finished.
     remaining: function() {
@@ -47,3 +54,5 @@ var app = app || {};
   // Create our global collection of **Todos**.
   app.todos = new Todos();
 })();
+
+
