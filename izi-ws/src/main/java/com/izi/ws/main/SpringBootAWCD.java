@@ -9,7 +9,7 @@ import com.izi.ws.config.JpaConfiguration;
 
  
 @Import(JpaConfiguration.class)
-@SpringBootApplication(scanBasePackages={"com.izi.ws,com.izi.domain,com.izi.dao,com.izi.ws.bean"})
+@SpringBootApplication(scanBasePackages={"com.izi.ws,com.izi.domain,com.izi.dao,com.izi.ws.bean,com.izi.ws.filter"})
 public class SpringBootAWCD {
  
     public static void main(String[] args) {

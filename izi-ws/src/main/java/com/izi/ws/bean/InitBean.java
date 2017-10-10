@@ -1,7 +1,5 @@
 package com.izi.ws.bean;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.annotation.PostConstruct;
 
