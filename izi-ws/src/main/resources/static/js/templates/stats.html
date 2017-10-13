@@ -1,0 +1,15 @@
+<span id="todo-count"><strong><%= remaining %></strong> <%= remaining == 1 ? 'objeto' : 'objetos' %> restante</span>
+<ul id="filters">
+	<li>
+		<a class="selected" href="#/">Todos</a>
+	</li>
+	<li>
+		<a href="#/active">Activos</a>
+	</li>
+	<li>
+		<a href="#/completed">Completados</a>
+	</li>
+</ul>
+<% if ( completed ) { %>
+<button id="clear-completed">Eliminar completados</button>
+<% } %>
