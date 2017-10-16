@@ -1,6 +1,9 @@
 server:
-  port: 8080
+  port: 8081
   contextPath: /SpringBootCRUDApp
+endpoints:
+  shutdown:
+    enabled: true
 ---
 spring:
   profiles: local,default
@@ -9,7 +12,7 @@ datasource:
     url: jdbc:h2:mem:example-app
     username: sa
     password: 
-    driverClassName: org.h2.Driver
+    driverClassName: org.h2.Driver	
     defaultSchema:
     maxPoolSize: 10
     hibernate:
